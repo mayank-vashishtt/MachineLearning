@@ -1,0 +1,73 @@
+1. What are Evaluation Metrics?
+
+Evaluation metrics are like report cards for machine learning models. They tell us:
+How good the model is at making predictions.'
+Which areas it struggles with.
+
+
+We need different metrics depending on the problem. For example:
+
+Classification: Predicting categories like "spam" or "not spam."
+Regression: Predicting numbers like house prices or temperatures.
+
+-----------------------------------------------
+
+2. Classification Metrics
+
+a. Accuracy
+Accuracy tells us how many predictions were correct.
+Formula:
+
+Accuracy= (Correct Predictions/ Total Prediction)
+
+Example: If a model predicts 90 out of 100 images correctly, the accuracy is 90%.
+
+Problem: If the data is imbalanced (e.g., 95% of emails are "not spam"), accuracy can be misleading. 
+A model that predicts "not spam" every time will be 95% accurate but useless.
+
+-----------------------------------------------
+
+b. Precision
+
+Precision focuses on positive predictions and asks: "How many of the positive predictions were correct?"
+
+Formula:
+Precision= Total Positives/ (True Positives + False Positives)
+
+Example: In a spam filter, if the model predicts 10 emails as spam but only 8 are actually spam, precision is 80%.
+
+-----------------------------------------------
+
+c. Recall (Sensitivity)
+
+Recall asks: "Out of all the actual positive cases, how many did the model correctly identify?"
+
+Recall = Total Positives/ (True Positives + False Positives)
+
+Example: If there are 20 spam emails and the model catches 15, recall is 75 percent
+
+-----------------------------------------------
+
+d. F1 Score
+
+the F1 score is like a balance between precision and recall. It’s useful when you care about both equally.
+
+F1=2×(Precision×Recall/Precision+Recall)
+
+Example: If precision is 80% and recall is 60%, the F1 score is about 69%.
+
+-----------------------------------------------
+
+e. ROC Curve and AUC
+
+The ROC Curve shows how well the model distinguishes between classes as the threshold for classification changes.
+
+True Positive Rate (Recall): How many actual positives did the model catch?
+False Positive Rate: How many negatives were incorrectly predicted as positives?
+
+AUC (Area Under Curve):
+AUC = 1: Perfect model.
+AUC = 0.5: Random guessing.
+
+Problem: AUC can be misleading for imbalanced data (e.g., a model might seem great just because it predicts the majority class well).
+
