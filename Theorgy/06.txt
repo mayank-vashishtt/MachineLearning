@@ -1,0 +1,84 @@
+1. What is Logistic Regression?
+
+Logistic regression is like a teacher for your computer. 
+It teaches the computer to look at some data and predict if something belongs to Category 1 or Category 0.
+
+Example: Imagine predicting whether someone will pass or fail an exam based on the hours they study.
+
+-----------------------------------------------
+
+2. Sigmoid Function
+
+A sigmoid function takes any number (positive, negative, or zero) and squishes it into a value between 0 and 1.
+Think of it as a switch: numbers closer to 1 mean "Yes," and numbers closer to 0 mean "No."
+
+Formula:
+σ(x) = 1/(1+e^(-x))
+
+
+Where:
+x is the input.
+e is a special constant (approximately 2.718).
+
+Example:
+If x=2:  0.8808
+This means the probability is around 88% for Category 1.
+
+-----------------------------------------------
+
+4. Loss Function
+A loss function tells the computer how wrong its predictions are.
+
+Example: If the actual answer is "Yes" (1), but the computer predicts "Maybe" (0.6), the loss function calculates how bad this guess is.
+
+Log Loss (or Binary Cross-Entropy Loss):
+Loss=−(y⋅log(y^​)+(1−y)⋅log(1−y^​))
+
+-----------------------------------------------
+
+5. Why Logistic Regression Uses Log Loss?
+
+The Log Loss gives a clear and smooth way to measure errors, which helps the computer learn better.
+Using Mean Squared Error (MSE) can confuse the learning process because it creates wavy patterns (non-convex functions).
+
+
+-----------------------------------------------
+
+6. Training a Logistic Regression Model
+
+Steps to Train a Model:
+
+
+Prepare the Data: Divide the data into:
+Features (𝑋): Inputs like hours studied.
+Target (𝑦): Answers like "Pass" (1) or "Fail" (0).
+
+Split the Data: Create two sets:
+Training Data: To teach the model.
+Testing Data: To check if the model learned well.
+
+Train the Model:
+Use the training data to adjust the model's rules.
+
+Evaluate the Model
+Compare its predictions on the test data to actual answers.
+
+-----------------------------------------------
+
+K-Fold Cross Validation
+
+What is it?
+A method to test the model's learning by dividing the data into k parts.
+Train on k−1 parts and test on the remaining part.
+Repeat k times to check consistency.
+
+-----------------------------------------------
+
+SUMMARY 
+
+Logistic Regression is a way to classify things into 0 or 1.
+The Sigmoid Function converts inputs into probabilities.
+The Log Loss helps the model learn from its mistakes.
+Gradient Descent adjusts the model step-by-step to reduce errors.
+Using Python libraries like scikit-learn, you can easily implement and train logistic regression models.
+
