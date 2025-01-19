@@ -1,0 +1,83 @@
+
+What is Logistic Regression?
+Logistic regression is a classification algorithm used to predict binary outcomes, like:
+Spam (1) or Not Spam (0)
+Fraud (1) or Not Fraud (0)
+
+
+It works by predicting a probability value between 0 and 1. For instance:
+
+If the probability is above a certain threshold (default is 0.5), the model classifies it as 1.
+Otherwise, it classifies it as 0.
+
+-----------------------------------------------
+
+How Logistic Regression Works:
+
+It uses the sigmoid function to calculate probabilities. The sigmoid function formula is:
+
+Formula:
+σ(x) = 1/(1+e^(-x))
+
+Here,
+z = wx + b  (a linear combination of weights and inputs) 
+w are weights, 
+x is the input, and 
+b is the bias.
+
+-----------------------------------------------
+
+3. Why We Need Evaluation Metrics
+We need to check how well the model performs by using evaluation metrics like:
+
+Confusion Matrix
+Precision
+Recall
+F1 Score
+Accuracy
+
+-----------------------------------------------
+
+Evaluation Metrics
+
+a) Confusion Matrix
+
+A confusion matrix is a 2x2 table for binary classification that shows:
+True Positive (TP): Correctly predicted positive class.
+True Negative (TN): Correctly predicted negative class.
+False Positive (FP): Predicted positive, but actually negative.
+False Negative (FN): Predicted negative, but actually positive.
+
+b) Precision
+
+Precision focuses on the quality of positive predictions:
+
+Precision= TP/(TP + FP)
+
+If precision is high, the model avoids predicting positives incorrectly.
+
+
+c) Recall (Sensitivity)
+
+Recall measures how well the model identifies actual positives:
+
+Precision= TP/(TP + FN)
+
+High recall means the model is good at capturing all the actual positives.
+
+d) F1 Score
+The F1 score balances precision and recall. It’s the harmonic mean of the two:
+
+F1=2×(Precision×Recall/Precision+Recall)
+
+F1 is crucial when the dataset is imbalanced (e.g., one class is much larger than the other).
+
+
+
+e) Accuracy
+Accuracy is the percentage of correctly predicted instances:
+
+Accuracy=  TP + TN / (TP + TN + FP + FN)
+It’s simple but unreliable for imbalanced datasets.
+
+
