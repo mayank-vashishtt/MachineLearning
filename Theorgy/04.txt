@@ -1,0 +1,116 @@
+
+What are Polynomial Features and Feature Engineering?
+
+Polynomial Features
+Think of polynomial features as a way to make simple input data more powerful. For example, if we start with one feature 
+(say x, we can transform it into higher powers like x^2 , x^3 , etc )
+
+Real-World Example: 
+Imagine you want to predict a person's health risk based on their height and weight. 
+One way to do this is by calculating Body Mass Index (BMI):
+
+BMI  = weight/height^2
+BMI is a new feature derived from the original height and weight data. Such "engineered" features often help make better predictions.
+
+
+How to Create Polynomial Features
+
+Polynomial features combine the input features in different ways. For example:
+If you have two features, 𝑥1(like height) and 𝑥2(like weight):
+Polynomial features up to degree 2: x1^2 , x2^2, x1 * x2
+
+These extra features help the model learn more complex relationships.
+
+-----------------------------------------------
+
+Fitting Models and the Problem of Overfitting
+
+When building machine learning models, you want them to:
+Learn patterns from the data.
+Generalize well to new, unseen data.
+
+Fitting the Model:
+The instructor fit a linear regression model with 
+different polynomial degrees (1 to 6) to see how the performance changes. 
+Here’s what they found:
+
+Degree 1: Score = 0.93 (Good, but might miss some complexity.)
+Degree 2: Score = 0.99 (Great! Captures the data’s structure.)
+Degree 3+: The score improves only slightly. This means adding more complexity doesn’t help much and could lead to overfitting.
+
+-----------------------------------------------
+
+What is Overfitting and Underfitting?
+
+Overfitting:
+The model learns the training data too well, including noise and random patterns that don’t apply to new data.
+Imagine memorizing every answer for a test, but when the questions change, you don’t know what to do.
+
+Underfitting:
+The model is too simple and doesn’t learn enough from the data.
+it’s like learning only the basics and not being able to answer detailed questions.
+
+-----------------------------------------------
+
+How to Check for Overfitting and Underfitting?
+
+R² (R-squared): Shows how much of the data’s variability the model explains.
+Adjusted R²: A better version of R² because it penalizes adding unnecessary features.
+
+R²: Measures how well the model fits the data.
+Adjusted R²: Accounts for the number of features, so it doesn’t overvalue unnecessary complexity.
+
+-----------------------------------------------
+Bias-Variance Trade-off
+
+Bias:
+If a model is too simple, it makes a lot of assumptions and doesn’t fit the data well (underfitting).
+
+Bias is the error caused by overly simplistic assumptions in a model.
+A high-bias model doesn't capture the complexity of the data well, leading to underfitting.
+
+Example:
+Trying to fit a straight line to data that follows a curve. The line is too simple to capture the trend.
+
+
+Variance:
+If a model is too complex, it learns random noise and struggles with new data (overfitting).
+
+Variance is the error caused by the model being too sensitive to small changes in the training data.
+A high-variance model learns noise along with the pattern, leading to overfitting.
+Example:
+Fitting a very wiggly curve to data that has some randomness. It learns unnecessary details that don’t generalize.
+
+
+
+Finding the Right Balance:
+The goal is to find the "sweet spot" where:
+
+The model is complex enough to capture the data’s patterns.
+The model is simple enough to avoid overfitting.
+
+-----------------------------------------------
+
+Okham's Razor Principle
+
+This principle says: "Simpler solutions are often better."
+
+In machine learning, we prefer simpler models that perform well rather than overly complex ones that might fail with new data.
+
+-----------------------------------------------
+
+How Bias and Variance Relate to Model Performance
+High Bias (Underfitting):
+
+Predictions are far off because the model doesn’t learn enough.
+Both training and test errors are high.
+High Variance (Overfitting):
+
+Predictions look great on the training data but fail on new data.
+Training error is low, but test error is high.
+
+The Trade-off
+A good model finds a balance between bias and variance.
+This balance is called the bias-variance trade-off.
+
+learn StandardScaler

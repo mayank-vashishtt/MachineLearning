@@ -122,25 +122,29 @@ SSresidual being low means your model is doing an excellent job of explaining th
 Result: High 𝑅2 strong model fit.
 
 
-
 2. Case 2: High SStotal+ High SSresidual​:
 Bad model
 SStotal being high means Y has significant variance to explain.
 SSresidual being high means your model is failing to explain most of this variance.
+
 Result: Low 𝑅2 poor model fit.
+
 
 3.Case 3: Low SStotal+ Low SSresidual​:
 Good model, but not much variability in the data
 
 SStotal being low means Y doesn’t have much variance to begin with (the values of Y are close to each other)
 SSresidual being low means your model captures almost all of that limited variance.
+
 Result: High 𝑅2  but the usefulness of the model might be limited because Y itself doesn’t vary much.
+
 
 4.Case 4: Low SStotal+ High SSresidual​:
 Bad model with limited variability in the data:
 
 SStotal being low means Y has little variability.
 SSresidual being being high means your model fails to capture even that small variability.
+
 Result: Low 𝑅2  poor model fit.
 
 
