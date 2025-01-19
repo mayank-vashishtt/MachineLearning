@@ -1,0 +1,148 @@
+#Linear regression
+
+-----------------------------------------------
+
+What is Linear Regression?
+Linear regression is a technique to predict a continuous value (like house prices, car prices, or exam scores) based on given features.
+For example:
+
+If you want to predict the price of a car, features like mileage, engine size, and age of the car may influence the price.
+The goal is to find a mathematical equation to predict the car price accurately using these features.
+The formula for simple linear regression (one independent variable) is: Y=WX+B
+
+Where:
+Y: The dependent variable (e.g., car price)
+X: The independent variable (e.g., mileage)
+W: Weight (slope) that measures how X impacts 𝑌
+B: Bias (intercept), the value of Y when X=0
+
+For multiple linear regression (many independent variables), the formula expands to:
+
+Y = W1X1 + W2X2 + . . . + WnXn + B
+Where:
+X1,X2, . . . , Xn are independent variables (features like mileage, engine size, age)
+W1,W2, . . . , Wn ​are their respective weights
+
+-----------------------------------------------
+
+Steps in Linear Regression
+
+1. Understanding the Data
+
+2. Preprocessing the Data
+Before training the model, clean and prepare the dataset.
+
+Remove Duplicates: Eliminate repeated rows in the dataset.
+Handle Missing Values: Fill or drop rows/columns with missing values.
+Outlier Detection: Identify and handle extreme values in features that can skew result
+
+3. Feature Encoding
+Machine learning models need numeric inputs, so categorical variables (like car brand) need to be converted into numbers.
+
+One-Hot Encoding:
+Creates a separate column for each category.
+Example: For brands Maruti, Honda, Hyundai, three new columns will be created: Maruti, Honda, Hyundai.
+A value of 1 indicates the presence of that brand, and 0 indicates absence.
+
+Mean Encoding:
+Replace categories with their average target value.
+Example: If the average price of Maruti cars is 10 lakhs, all Maruti rows will be replaced with 10.
+
+
+4. Scaling Features
+Features should be on the same scale to prevent one feature from dominating others 
+(e.g., engine size is measured in thousands, but age is in single digits).
+
+Min-Max Scaling: Rescales features to a range of [0, 1]:
+
+X<scaled> = (X - X<min>)/(X<max> - X<min>)
+​
+
+5. Model Training
+
+Split the data into training and testing sets:
+    Training data is used to build the model.
+    Testing data is used to evaluate its performance.
+
+Fit a linear regression model:
+    Use libraries like scikit-learn in Python
+
+   ``` from sklearn.linear_model import LinearRegression
+       model = LinearRegression()
+       model.fit(X_train, y_train)````
+
+Gradient Descent:
+This optimization algorithm adjusts weights and bias to minimize the error between predicted and actual values. 
+Small steps are taken in the direction of lower error.
+​
+
+6. Assumptions of Linear Regression
+
+After training, evaluate the model using metrics like:
+Mean Squared Error (MSE): Average squared error between predicted and actual values.
+R² Score: Proportion of variance explained by the model (1.0 is perfect).
+ 
+-----------------------------------------------
+
+What is R² (R-Squared)?
+R², also known as the Coefficient of Determination, is a statistical measure used to assess the performance of a regression model. 
+It explains the proportion of the variance in the dependent variable (Y) that is predictable from the independent variables (X).
+
+
+R2 = 1 − (SStotal/​SSresidual​​)
+
+SSresidual ​= ∑ (Yactual ​− Ypredicted​)^2 : 
+The sum of squared differences between actual and predicted values.
+high -- bad as it means your model is leaving a lot of variability unexplained
+low -- good as it means your model is capturing more of the variability in Y, which is good.
+
+
+
+SStotal​ = ∑ (Yactual ​− Yˉ)^2:
+he total variance in the actual datarelative to its mean
+
+
+Key Points About R²
+R2 ranges from 0 to 1:
+
+R2 = 1: The model explains all the variance in Y. Perfect fit.
+R2 = 0: The model explains none of the variance. It’s as good as guessing the mean value for all 𝑌
+
+less than 0, even worse then mean 
+
+-----------------------------------------------
+
+Scenarios:
+
+1. Case 1: High SStotal+ Low SSresidual​:
+Good model
+SStotal being high means the dependent variable (Y) has a lot of variance.
+SSresidual being low means your model is doing an excellent job of explaining that variance.
+
+Result: High 𝑅2 strong model fit.
+
+
+
+2. Case 2: High SStotal+ High SSresidual​:
+Bad model
+SStotal being high means Y has significant variance to explain.
+SSresidual being high means your model is failing to explain most of this variance.
+Result: Low 𝑅2 poor model fit.
+
+3.Case 3: Low SStotal+ Low SSresidual​:
+Good model, but not much variability in the data
+
+SStotal being low means Y doesn’t have much variance to begin with (the values of Y are close to each other)
+SSresidual being low means your model captures almost all of that limited variance.
+Result: High 𝑅2  but the usefulness of the model might be limited because Y itself doesn’t vary much.
+
+4.Case 4: Low SStotal+ High SSresidual​:
+Bad model with limited variability in the data:
+
+SStotal being low means Y has little variability.
+SSresidual being being high means your model fails to capture even that small variability.
+Result: Low 𝑅2  poor model fit.
+
+
+
+

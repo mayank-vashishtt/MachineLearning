@@ -1,6 +1,5 @@
 #Machine Learning 
 
-
 -----------------------------------------------
 
 What is Machine Learning?
