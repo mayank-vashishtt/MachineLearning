@@ -1,0 +1,25 @@
+What is Data Aggregation?
+
+Data aggregation means combining or summarizing data to make it easier to analyze. 
+In machine learning or business, you often need to summarize data in ways that algorithms or humans can better understand. 
+For example, instead of looking at every point where a delivery happens, you might want to know the total time or average speed for a trip.
+
+
+-----------------------------------------------
+
+1. Group By Operations
+
+A Group By operation is like organizing your data into different groups based on some rule. 
+For example, if you have a list of students and their marks, you might group them by their class to see how each class is doing.
+
+-----------------------------------------------
+
+2. Cumulative Sum and Aggregation
+
+Cumulative Sum: This means adding up the numbers as you go along. 
+For example, if you want to know the total time spent on a trip, you add the times from each stage of the trip together.
+
+Aggregation Techniques: When you’re grouping data, you can decide how to summarize each group. Sometimes, you use:
+
+Sum: Add things together (e.g., total time for all segments of a trip).
+Last: If something accumulates over time (e.g., the final time of a trip, including all delays and pauses), you just pick the last value.

@@ -165,3 +165,5 @@ Cost Function
 Measures the average error over the entire dataset.
 Helps evaluate the overall performance of the model.
 Example: Mean Squared Error (MSE) across all data points.
+
+
