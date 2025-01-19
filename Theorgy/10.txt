@@ -1,0 +1,45 @@
+
+1.What is K-Nearest Neighbors (KNN)?
+
+K-Nearest Neighbors (KNN) is like asking your friends (neighbors) for advice. When you don’t know what to do, 
+you ask a few people around you (the closest ones) and go with the majority opinion. In KNN:
+
+Data points are like "friends."
+Distance tells you who is closer.
+The majority vote decides the outcome (classification).
+
+-----------------------------------------------
+
+2. How Does KNN Work?
+
+Imagine This:
+
+You want to know if a fruit is an apple or an orange.
+
+You have a list of fruits you’ve seen before with their weight and color.
+For a new fruit, you check how close it is to other fruits you know.
+If most nearby fruits are apples, this new fruit is probably an apple!
+
+-----------------------------------------------
+
+3. Steps of KNN
+
+Data Preparation: Organize your data into two parts:
+
+Features (the characteristics, like weight, color).
+Labels (the answer, like "apple" or "orange").
+
+Calculate Distance: Measure how far this new fruit is from all other fruits (we’ll use the Euclidean distance formula).
+
+Find Neighbors: Pick the closest fruits (neighbors) based on the distance.
+
+Vote: See which label (apple or orange) has the majority.
+
+Predict: Assign the majority label to your new fruit.
+
+-----------------------------------------------
+
+4. What is Euclidean Distance?
+
+Euclidean distance is like drawing a straight line between two points to see how far apart they are.
+Distance= root((x2​−x1​)^2+(y2​−y1​)^2​)
