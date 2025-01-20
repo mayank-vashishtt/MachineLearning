@@ -1,0 +1,111 @@
+
+Decision Trees
+
+What are Decision Trees?
+A Decision Tree is like a flowchart that makes decisions based on questions (conditions). 
+It splits data into smaller parts until each part is simple enough to make a decision.
+
+Key Concepts
+Nodes: Points where data is split.
+Leaves: Final parts of the tree where decisions (or predictions) are made.
+Homogeneity: If a leaf contains data from only one class, it’s perfectly homogeneous.
+Impurity: If a leaf has mixed classes, it’s impure.
+
+-----------------------------------------------
+
+Metrics to Measure Impurity:
+
+Gini Impurity: Measures how often a randomly chosen element would be incorrectly classified.
+Entropy: Measures randomness in the data.
+
+-----------------------------------------------
+
+Overfitting in Decision Trees
+Overfitting: When the model is too complex and learns the noise in the data.
+Solution: Limit the depth of the tree or the number of samples required to split.
+
+Controlling Overfitting
+max_depth: Restricts the tree's depth.
+min_samples_split: Minimum samples needed to split a node.
+
+-----------------------------------------------
+
+Random Forest
+
+What is a Random Forest?
+A Random Forest is a collection of Decision Trees. 
+Instead of relying on a single tree, it combines multiple trees for better predictions.
+
+How it Works:
+Bagging: Randomly picks subsets of data and trains multiple trees.
+Feature Selection: Uses a random set of features for each tree.
+Aggregation:
+For classification: Majority vote.
+For regression: Average prediction.
+
+-----------------------------------------------
+
+Bagging
+Bagging (Bootstrap Aggregating) trains multiple models on random subsets of data and combines their predictions. 
+This reduces overfitting.
+
+
+-----------------------------------------------
+
+Boosting
+
+Boosting focuses on training models sequentially, where each new model corrects errors made by the previous one.
+
+Example: Using AdaBoost
+```from sklearn.ensemble import AdaBoostClassifier
+
+# AdaBoost Classifier
+adaboost = AdaBoostClassifier(n_estimators=50, random_state=42)
+adaboost.fit(X_train, y_train)
+
+# Predictions
+adaboost_predictions = adaboost.predict(X_test)
+print("AdaBoost Accuracy:", accuracy_score(y_test, adaboost_predictions))
+```
+-----------------------------------------------
+
+Hyperparameter Tuning with Grid Search
+ou can optimize parameters like n_estimators, max_depth, etc., to improve the model.
+```from sklearn.model_selection import GridSearchCV
+
+# Parameter Grid
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5],
+    'max_features': ['sqrt', 'log2']
+}
+
+# Grid Search
+grid_search = GridSearchCV(estimator=RandomForestClassifier(random_state=42), param_grid=param_grid, scoring='accuracy', cv=3)
+grid_search.fit(X_train, y_train)
+
+print("Best Parameters:", grid_search.best_params_)
+print("Best Score:", grid_search.best_score_)
+```
+-----------------------------------------------
+
+ Merging Intervals
+ This problem combines overlapping intervals into one.
+
+```def merge_intervals(intervals):
+    # Sort intervals by start time
+    intervals.sort(key=lambda x: x[0])
+    merged = []
+
+    for interval in intervals:
+        if not merged or merged[-1][1] < interval[0]:
+            merged.append(interval)
+        else:
+            merged[-1][1] = max(merged[-1][1], interval[1])
+    return merged
+
+# Example Usage
+intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+print("Merged Intervals:", merge_intervals(intervals))
+```
