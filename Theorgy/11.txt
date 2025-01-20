@@ -1,0 +1,89 @@
+
+One-Hot Encoding
+
+Imagine you have a list of fruits: ["Apple", "Banana", "Cherry"]. 
+Computers can't directly understand text, so we convert these into numbers. 
+One-hot encoding creates columns for each fruit, with 1 indicating the presence of that fruit and 0 otherwise.
+
+-----------------------------------------------
+
+Label Encoding
+
+Instead of creating separate columns, we assign each category a unique number. For example:
+Apple → 0
+Banana → 1
+Cherry → 2
+
+-----------------------------------------------
+
+Target Encoding
+
+Target encoding replaces categories with the mean (or other statistics) of their corresponding target variable. 
+For example, if you’re predicting employee churn based on departments:
+
+-----------------------------------------------
+
+Decision Tree
+
+A decision tree splits data into smaller groups (branches) based on certain conditions (features). 
+It works like playing "20 Questions," where each question narrows down the possibilities.
+
+Steps:
+Start with all the data.
+Split the data based on a feature (e.g., gender).
+Repeat until the data is grouped into similar categories.
+
+-----------------------------------------------
+
+Entropy
+Entropy measures how "impure" or "mixed" the data is. A pure group (all 0s or all 1s) has entropy = 0. A mixed group has higher entropy.
+
+H(S)=−∑p(x)log2​p(x)
+
+-----------------------------------------------
+
+Information Gain
+This measures how much entropy decreases after splitting data. The split with the highest information gain is chosen.
+
+-----------------------------------------------
+
+Gini Index
+An alternative to entropy. Simpler and faster to compute.
+Gini=1−∑p(x)2
+
+Overfitting and Max Depth
+Overfitting: When a model performs well on training data but poorly on new data.
+Max Depth: Limits how deep the tree can go, preventing overfitting.
+
+
+Hyperplane
+In machine learning, a hyperplane is a decision boundary that separates classes. In 2D, it's a line; in 3D, it's a plane.
+
+-----------------------------------------------
+
+kaggle
+Definition: Kaggle is a platform for data scientists and machine learning practitioners to practice, compete, and collaborate.
+
+Online Notebooks: Preconfigured environments like Google Colab for running code.
+Competitions: Real-world problem-solving challenges hosted by companies.
+Datasets: Free access to a variety of datasets.
+Networking: Community interaction similar to LinkedIn.
+
+-----------------------------------------------
+
+Modeling Approaches
+
+Logistic Regression
+Predicts binary outcomes (e.g., churn: yes/no).
+
+K-Nearest Neighbors (KNN)
+Limitation: Inefficient for large datasets due to high memory and computational needs.
+
+Decision Trees
+Advantages:
+Easy to interpret.
+Handle large datasets well.
+
+Concept:
+Data is split into branches based on feature values.
+Each branch leads to a "decision" (e.g., churn or no churn).
