@@ -1,0 +1,80 @@
+
+Introduction to Boosting Techniques
+Boosting is a machine learning technique used to improve the performance of weak models (models that don't perform well on their own) 
+by combining them into a strong model. In other words, boosting focuses on improving the accuracy of a model by training multiple models 
+sequentially, where each new model tries to correct the mistakes made by the previous ones.
+
+-----------------------------------------------
+
+What is Boosting?
+Boosting involves combining the predictions of multiple models (called learners) to create a final prediction 
+that is more accurate than any individual learner. 
+These learners typically have a higher bias (not very accurate on their own) but low variance (they don't change much with different data). 
+When combined, they perform better than individually.
+
+AdaBoost (Adaptive Boosting)
+AdaBoost is one of the most popular boosting techniques. Here's how it works:
+
+How AdaBoost Works
+Base Learners: AdaBoost typically uses decision stumps (very simple trees with just one split or decision point) as its base learners. 
+These are weak models that don't perform very well on their own.
+
+Weighting Misclassified Data: AdaBoost works by giving more importance (weight) to the data points 
+that the current model misclassifies. This makes the next model focus on these difficult cases.
+
+Final Prediction: After training multiple models, AdaBoost combines their predictions by giving them 
+different weights based on how well each model performed. The final prediction is a weighted vote of all the models.
+
+-----------------------------------------------
+
+Gradient Boosting
+
+Gradient Boosting is another popular boosting technique, but it works a bit differently:
+
+How Gradient Boosting Works
+
+Initial Prediction: First, it starts with an initial guess of the prediction (like the average of all the target values). 
+This is called the initial prediction.
+
+Calculating Residuals: Gradient Boosting calculates the residuals or errors 
+(the difference between the true value and the predicted value) from the previous model. 
+Instead of re-weighting the data like AdaBoost, Gradient Boosting focuses on predicting these residuals.
+
+Correcting Residuals: New models (trees) are created to predict the residuals. 
+These models try to correct the errors made by the previous ones.
+
+Final Prediction: The final prediction is made by adding the contributions of all the models, 
+typically adjusting for the learning rate (how much each new model should influence the final result).
+
+-----------------------------------------------
+
+Gradient Boosting Example:
+Suppose the first model guesses the target value for each data point.
+The second model focuses on the errors made by the first model.
+The third model focuses on the errors of the second model, and so on.
+The final prediction combines all these models.
+
+-----------------------------------------------
+
+Key Differences Between AdaBoost and Gradient Boosting
+
+Method:
+AdaBoost adjusts the weights of the data based on misclassifications.
+Gradient Boosting focuses on predicting residuals (errors) made by previous models.
+
+Application:
+AdaBoost is mostly used for classification tasks (like predicting categories).
+Gradient Boosting is used for both classification and regression tasks (like predicting continuous values).
+
+Focus on Errors:
+AdaBoost adjusts the weights of misclassified points.
+Gradient Boosting tries to predict the residuals (errors) directly.
+
+-----------------------------------------------
+
+Summary:
+Boosting techniques combine weak models to create a strong one.
+AdaBoost adjusts weights for misclassified data and combines the predictions of base learners.
+Gradient Boosting focuses on predicting residuals (errors) and iteratively improves predictions.
+In Python, sklearn provides a simple way to implement Gradient Boosting through GradientBoostingRegressor for regression tasks.
+
