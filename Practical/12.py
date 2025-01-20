@@ -58,6 +58,7 @@ bagging_classifier.fit(X_train, y_train)
 bagging_predictions = bagging_classifier.predict(X_test)
 print("Bagging Accuracy:", accuracy_score(y_test, bagging_predictions))
 
+
 #boosting using adaboost
 
 from sklearn.ensemble import AdaBoostClassifier
