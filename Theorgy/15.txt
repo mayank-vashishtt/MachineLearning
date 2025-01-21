@@ -1,0 +1,4 @@
+
+Libraries: In Python, popular libraries for implementing Gradient Boosting are:
+sklearn.ensemble for basic Gradient Boosting.
+XGBoost and LightGBM for more optimized and faster implementations.
